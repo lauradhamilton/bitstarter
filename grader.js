@@ -61,7 +61,7 @@ if(require.main == module) {
         .option('-f, --file <html_file>', 'Path to index.html',clone(assertFileExists),HTMLFILE_DEFAULT)
         .option('-u, --url <url>', 'Path to URL')
 	.parse(process.argv);
-    if('--url'.indexOf(process.argv)) {
+    if(typeof url == 'string') {
         var checkJson = checkURL(program.url, program.checks)
     }
     else {
